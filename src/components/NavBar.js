@@ -1,4 +1,5 @@
 import logo from '../media/fotos/logo.png';
+import Cart from "../components/cart/Cart"
 
 
 const NavBar = () => {
@@ -16,28 +17,23 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#">About</a>
+                <a className="nav-link subrayado" id="navList1" href="#">About</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">For Cats</a>
+                <a className="nav-link subrayado" id="navList2" href="#">For Cats</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">For Dogs</a>
+                <a className="nav-link subrayado" id="navList3" href="#">For Dogs</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">FAQs</a>
+                <a className="nav-link subrayado" id="navList4" href="#">FAQs</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Contact Us</a>
-              </li>
-              <li>
-                <a href="" class="moreInfoLi">More information</a>
+                <a className="nav-link subrayado" id="navList5" href="#">Contact Us</a>
               </li>
             </ul>
           </div>
-          <div>
-            <a href="" class="moreInfo">More information</a>
-          </div>
+          <Cart />
         </div>
       </nav>
     );

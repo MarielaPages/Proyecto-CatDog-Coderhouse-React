@@ -15,40 +15,70 @@ nav{
 .logo{
     width: 100%;
     max-width: 7rem;
-    margin-left: 4rem;
-}
-.moreInfo{
-    margin-right: 4rem;
-    display: none;
+    margin-left: 0.5rem;
 }
 .navButton{
     position: absolute;
-    top: 3rem;
-    right:3rem;
+    top: 3.2rem;
+    right:0.5rem;
 }
 .navbar-nav li{
     font-size: 1.2rem;
-    color: darksalmon;
 }
 .nav-link{
     font-weight: bold;
-    color: darksalmon;
 }
-.moreInfo, .moreInfoLi{
-    text-decoration: none;
+#navList1, #navList2, #navList3, #navList4, #navList5{
     color: darksalmon;
-    font-size: 1.2rem;
-    font-weight: bold;
 }
 .navbar-collapse{
-    margin-left: 4rem;
+    margin-left: 1rem;
+}
+
+/*Home video*/
+.headerHome{
+    display:flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+.headerHome__video{
+    width: 25rem;
+}
+.borderRadius{
+    border-radius: 0.3rem;
 }
 
 @media only screen and (min-width:680px){
-
+    .logo{
+        margin-left: 4rem;
+    }
+    .navbar-collapse{
+        margin-left: 4rem;
+    }
+    .headerHome__video{
+        width: 40rem;
+    }
+    .navButton{
+        position: absolute;
+        top: 3.2rem;
+        right:4rem;
+    }
+    .navbar-nav li{
+        font-size: 1.5rem;
+    }
 }
 
 @media only screen and (min-width:992px){
+    .subrayado{
+        background:linear-gradient(darksalmon,darksalmon);
+        background-size: 0% 2px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        transition: background-size .2s;
+    }
+    .subrayado:hover{
+        background-size: 100% 2px;
+    }
     .navbar-nav{
         width: 100%;
         display: flex;
@@ -58,10 +88,7 @@ nav{
         margin-right: 1rem;
         margin-right: 1rem;
     }
-    .moreInfo{
-        display:unset;
-    }
-    .moreInfoLi{
-        display: none;
+    .headerHome__video{
+        width: 65rem;
     }
 }
