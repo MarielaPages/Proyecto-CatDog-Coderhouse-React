@@ -42,7 +42,10 @@ nav{
     padding-top: 2rem;
 }
 .headerHome__video{
-    width: 25rem;
+    width: 100%;
+    max-width: 30rem;
+    margin-left: 1rem;
+    margin-right:1rem;
 }
 .borderRadius{
     border-radius: 0.3rem;
@@ -56,7 +59,8 @@ nav{
         margin-left: 4rem;
     }
     .headerHome__video{
-        width: 40rem;
+        max-width: 45rem;
+        width:100%
     }
     .navButton{
         position: absolute;
@@ -89,6 +93,7 @@ nav{
         margin-right: 1rem;
     }
     .headerHome__video{
-        width: 65rem;
+        max-width: 65rem;
+        width:100%
     }
 }

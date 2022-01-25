@@ -1,5 +1,5 @@
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import catVideo from './media/videos/catfurniture.mp4'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 

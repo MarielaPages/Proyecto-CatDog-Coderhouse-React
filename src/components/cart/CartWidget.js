@@ -1,7 +1,7 @@
 import cart from "./cart-img/cart-icon.png";
-import "./cart.css";
+import "./CartWidget.css";
 
-const Cart = () => {
+const CartWidget = () => {
     return(
         <div>
             <a href="" className="cart">
@@ -11,4 +11,4 @@ const Cart = () => {
     )
 }
 
-export default Cart;
+export default CartWidget;

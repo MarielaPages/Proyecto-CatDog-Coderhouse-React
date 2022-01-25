@@ -1,5 +1,5 @@
-import logo from '../media/fotos/logo.png';
-import Cart from "../components/cart/Cart"
+import logo from './NavBar-logo/logo.png';
+import CartWidget from "../cart/CartWidget"
 
 
 const NavBar = () => {
@@ -33,7 +33,7 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-          <Cart />
+          <CartWidget />
         </div>
       </nav>
     );
