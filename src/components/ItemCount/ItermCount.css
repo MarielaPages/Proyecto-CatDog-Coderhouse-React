@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    width: 20%;
+    font-size: 1.2rem;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.5rem;
+    margin-left: 0.5rem;
+}
+.buttons button{
+    margin:0.1rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
