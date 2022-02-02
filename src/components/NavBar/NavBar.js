@@ -9,7 +9,7 @@ const NavBar = () => {
           <a className="navbar-brand" href="#">
             <img src={logo} alt="Logo CatDog" className="logo" />
           </a>
-          <div class="navButton">
+          <div className="navButton">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />
             </button>

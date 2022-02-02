@@ -1,6 +1,7 @@
 import "./ItemListContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
 import React, { useState } from "react"
+import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = ({ heading, subheading1, subheading2 }) => {
     const initial = 1;
@@ -38,6 +39,7 @@ const ItemListContainer = ({ heading, subheading1, subheading2 }) => {
                 onAdd={onAdd}
                 onLess={onLess}
             />
+            <ItemList />
         </>
     )
 }

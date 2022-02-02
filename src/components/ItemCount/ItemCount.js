@@ -5,7 +5,7 @@ const ItemCount = ({ stock, items, onAdd, onLess }) => {
         <div className="container">
             <div className="product">
                 <div>Items: {items}</div>
-                <div class="buttons">
+                <div className="buttons">
                     <button onClick={onAdd}>+</button>
                     <button onClick={onLess}>-</button>
                 </div>
