@@ -2,7 +2,7 @@ import "./ItermCount.css"
 
 const ItemCount = ({ stock, items, onAdd, onLess }) => {
     return(
-        <div className="container">
+        <div className="containerCounter">
             <div className="product">
                 <div>Items: {items}</div>
                 <div className="buttons">

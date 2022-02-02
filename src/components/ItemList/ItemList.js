@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react'
+import "./ItemList.css"
 import Item from "../Item/Item"
 
 const ItemList = () => {
@@ -10,23 +11,27 @@ const ItemList = () => {
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
             .then((res) => res.json())
-            .then((prods) => {setProducts(prods)
-                            setIsLoading(false)});
+            .then((prods) => setProducts(prods))
+            .catch((error) => console.log(error))
+            .finally(() => setIsLoading(false))
     }, []);
 
-
     return(
-        <div className="container">
-            {isLoading 
-                ?
-            <h3>Is loading...</h3>
-                :    
-            (products.map((product) => {
-                <div key={product.id} className="col-md-4 col-sm-12">
-                    <Item data={product} />
-                </div>
-            }))
-            }
+        <div className="container products">
+            <div className="row">
+                {isLoading 
+                    ?
+                <p className="text-center">Is loading...</p>
+                    :    
+                (products.map((product) => {
+                    return(
+                        <div key={product.id} className="col-sm-12 col-md-3">
+                            <Item data={product} />
+                        </div>
+                    )
+                }))
+                }
+            </div>
         </div>
     )
 }

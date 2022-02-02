@@ -1,0 +1,18 @@
+.imageContainer{
+    height: 35rem;
+    display: flex;
+    align-items: center;
+}
+.imageContainer img{
+    max-width: 25rem;
+    width: 100%;
+}
+.casrdBodyContainer{
+    height: 10rem;
+
+}
+.cardContainer{
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
