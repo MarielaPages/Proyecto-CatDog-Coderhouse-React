@@ -2,6 +2,7 @@ import "./ItemListContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
 import React, { useState } from "react"
 import ItemList from '../ItemList/ItemList'
+import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 
 const ItemListContainer = ({ heading, subheading1, subheading2 }) => {
     const initial = 1;
@@ -40,6 +41,8 @@ const ItemListContainer = ({ heading, subheading1, subheading2 }) => {
                 onLess={onLess}
             />
             <ItemList />
+            {/* por ahora pongo el detalle de un producto aca, ya que aun no vimos como ponerlo con un click*/}
+            <ItemDetailContainer />
         </>
     )
 }
