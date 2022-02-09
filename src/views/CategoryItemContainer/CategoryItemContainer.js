@@ -1,10 +1,10 @@
 import React, { useState, useEffect} from 'react'
-import './ForDogs.css'
-import ForDogsItem from './ForDogsItem'
+import './CategoryItemContainer.css'
+import Item from '../../components/Item/Item'
 import { useParams } from 'react-router-dom'
 
 
-const ForDogs = () => {
+const CategoryItemContainer = () => {
     const [products, setProducts] = useState([]);
 
     const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +31,7 @@ const ForDogs = () => {
                 (products.map((product) => {
                     return(
                         <div key={product.id} className="col-sm-12 col-md-6 col-lg-4 col-xxl-3">
-                            <ForDogsItem data={product} />
+                            <Item data={product} />
                         </div>
                     )
                 }))
@@ -41,4 +41,4 @@ const ForDogs = () => {
     )
 }
 
-export default ForDogs
+export default CategoryItemContainer
