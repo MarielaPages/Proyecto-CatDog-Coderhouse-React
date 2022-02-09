@@ -1,6 +1,6 @@
-import "./Item.css"
+import './ForCatsItem.css'
 
-const Item = ( {data} ) => {
+const ForCatsItem = ( {data} ) => {
     return(
         <div className="card cardContainer" style={{width: '18rem'}}>
             <div className="imageContainer">
@@ -14,4 +14,4 @@ const Item = ( {data} ) => {
     )
 }
 
-export default Item;
+export default ForCatsItem;

@@ -1,21 +1,28 @@
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import catVideo from './media/videos/catfurniture.mp4'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import './App.css'
+import NavBar from './components/NavBar/NavBar'
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Home from './views/Home/Home'
+import About from './views/About/About'
+import ForCats from './views/ForCats/ForCats'
+import ForDogs from './views/ForDogs/ForDogs'
+import FAQs from './views/FAQs/FAQs'
+import ContactUs from './views/ContactUs/ContactUs'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 function App() {
   return (
-    <>
+    <Router>
       <NavBar />
-      <header className="headerHome">
-        <video src={catVideo} autoPlay muted loop preload="auto" width="1200" className="borderRadius headerHome__video"></video>
-      </header>
-      <ItemListContainer 
-        heading="Hi, we are CatDog!"
-        subheading1="Here we love joy, style and design, so if you are looking for your pet to be comfortable and have fun while your house looks great, you are in the right place!"
-        subheading2="We offer you a wide range of pet furniture and toys, and also some trendy pet clothing. Feel free to take a look and choose what suits your pet."
-      />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/category1/:categoryId" element={<ForCats/>} />
+        <Route path="/category2/:categoryId" element={<ForDogs/>} />
+        <Route path="/faqs" element={<FAQs/>} />
+        <Route path="/contactus" element={<ContactUs/>} />
+        <Route path="/detail/:id" element={<ItemDetailContainer/>} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -35,21 +35,6 @@ nav{
     margin-left: 1rem;
 }
 
-/*Home video*/
-.headerHome{
-    display:flex;
-    justify-content: center;
-    padding-top: 2rem;
-}
-.headerHome__video{
-    width: 100%;
-    max-width: 30rem;
-    margin-left: 1rem;
-    margin-right:1rem;
-}
-.borderRadius{
-    border-radius: 0.3rem;
-}
 
 @media only screen and (min-width:680px){
     .logo{
@@ -57,10 +42,6 @@ nav{
     }
     .navbar-collapse{
         margin-left: 4rem;
-    }
-    .headerHome__video{
-        max-width: 45rem;
-        width:100%
     }
     .navButton{
         position: absolute;
@@ -91,9 +72,5 @@ nav{
     .navbar-nav li{
         margin-right: 1rem;
         margin-right: 1rem;
-    }
-    .headerHome__video{
-        max-width: 65rem;
-        width:100%
     }
 }

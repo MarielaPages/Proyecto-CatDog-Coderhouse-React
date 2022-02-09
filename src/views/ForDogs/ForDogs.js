@@ -1,21 +1,25 @@
 import React, { useState, useEffect} from 'react'
-import "./ItemList.css"
-import Item from "../Item/Item"
-import { Link } from "react-router-dom"
+import './ForDogs.css'
+import ForDogsItem from './ForDogsItem'
+import { useParams } from 'react-router-dom'
 
-const ItemList = () => {
 
+const ForDogs = () => {
     const [products, setProducts] = useState([]);
 
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+
+    let categoryId = useParams();
+
+    let category = categoryId.categoryId;
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
+        fetch(`https://fakestoreapi.com/products/category/${category}`)
             .then((res) => res.json())
             .then((prods) => setProducts(prods))
             .catch((error) => console.log(error))
             .finally(() => setIsLoading(false))
-    }, []);
+    }, [category]);
 
     return(
         <div className="container products">
@@ -27,9 +31,7 @@ const ItemList = () => {
                 (products.map((product) => {
                     return(
                         <div key={product.id} className="col-sm-12 col-md-6 col-lg-4 col-xxl-3">
-                            <Link to={`/detail/${product.id}`} className="itemLink">
-                                <Item data={product} />
-                            </Link>
+                            <ForDogsItem data={product} />
                         </div>
                     )
                 }))
@@ -39,4 +41,4 @@ const ItemList = () => {
     )
 }
 
-export default ItemList;
+export default ForDogs

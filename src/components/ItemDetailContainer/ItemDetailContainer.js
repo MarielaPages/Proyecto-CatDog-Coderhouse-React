@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import '../ItemDetailContainer/ItemDetailContainer.css'
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
 
@@ -8,17 +9,21 @@ const ItemDetailContainer = () => {
 
     const [isLoading,setIsLoading] = useState(true);
 
+    let idObj = useParams();
+    
+    let idProd = idObj.id;
+
     let getItem = () => {
-        fetch("https://fakestoreapi.com/products")
+        fetch(`https://fakestoreapi.com/products/${idProd}`)
             .then((res) => res.json())
-            .then((prods) => setProdDetail(prods.find(prod => prod.id === 1)))
+            .then((prod) => setProdDetail(prod))
             .catch((error) => console.log(error))
             setTimeout(() => {setIsLoading(false)}, 2000);
     }
 
     useEffect(() => {
         getItem();
-    }, []);
+    }, [idProd]);
 
     return(
         <div className="productDetail">
