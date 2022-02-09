@@ -1,0 +1,10 @@
+.products{
+    margin-top: 3rem;
+}
+.itemLink{
+    color:darksalmon;
+    text-decoration: none;
+}
+.itemLink:hover{
+    color: rgb(231, 100, 56);
+}

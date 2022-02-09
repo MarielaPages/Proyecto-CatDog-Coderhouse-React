@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import './CategoryItemContainer.css'
 import Item from '../../components/Item/Item'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const CategoryItemContainer = () => {
@@ -31,7 +32,9 @@ const CategoryItemContainer = () => {
                 (products.map((product) => {
                     return(
                         <div key={product.id} className="col-sm-12 col-md-6 col-lg-4 col-xxl-3">
-                            <Item data={product} />
+                            <Link to={`/detail/${product.id}`} className="itemLink">
+                                <Item data={product} />
+                            </Link>
                         </div>
                     )
                 }))
