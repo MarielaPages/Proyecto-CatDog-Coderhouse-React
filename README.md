@@ -1,4 +1,4 @@
-This is a cat and dog e-commerce. Here will find:
+This is a cat and dog e-commerce. Here you will find:
  - A general section where you can see some of our products
  - A cat section with products for cats (For Cats)
  - A dog section with products for dogs (For Dogs)
