@@ -1,3 +1,13 @@
+This is a cat and dog e-commerce. Here will find:
+ - A general section where you can see some of our products
+ - A cat section with products for cats (For Cats)
+ - A dog section with products for dogs (For Dogs)
+ - A section where you can read more about us (About Us)
+ - A seection with general questions (FAQs)
+ - A contact us section with a map and a message section. 
+
+I decided to make a minimalist application so that people could buy in an easy and pleasant way
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
