@@ -1,27 +1,7 @@
-import "./ItemListContainer.css";
-import ItemCount from "../ItemCount/ItemCount";
-import React, { useState } from "react"
+import "./ItemListContainer.css"
 import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = ({ heading, subheading1, subheading2 }) => {
-    const initial = 1;
-    const stock = 5;
-
-    const [items, setItems] = useState(initial);
-
-    const onAdd = () => {
-        if(items < stock){
-            setItems(items + 1)
-        }
-    }
-
-    const onLess = () => {
-        if(items > initial){
-            setItems(items - 1)
-        }
-    }
-
-
     return(
         <>
             <section>
@@ -33,12 +13,6 @@ const ItemListContainer = ({ heading, subheading1, subheading2 }) => {
                     </article>
                 </div> 
             </section>
-            <ItemCount
-                stock={stock}
-                items={items}
-                onAdd={onAdd}
-                onLess={onLess}
-            />
             <ItemList />
         </>
     )

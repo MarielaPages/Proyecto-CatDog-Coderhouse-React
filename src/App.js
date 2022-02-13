@@ -7,6 +7,7 @@ import CategoryItemContainer from './views/CategoryItemContainer/CategoryItemCon
 import FAQs from './views/FAQs/FAQs'
 import ContactUs from './views/ContactUs/ContactUs'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Cart from './views/Cart/Cart'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/faqs" element={<FAQs/>} />
         <Route path="/contactus" element={<ContactUs/>} />
         <Route path="/detail/:id" element={<ItemDetailContainer/>} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
     </Router>
   );

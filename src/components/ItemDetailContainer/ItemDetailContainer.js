@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
         <div className="productDetail">
             {isLoading 
                 ?
-            <p>Is loading...</p>
+            <p className="text-center">Is loading...</p>
                 :
             <ItemDetail data={prodDetail}/>
             }
