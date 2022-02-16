@@ -1,0 +1,22 @@
+.cardBodyContainer{
+    height: 12rem;
+}
+.cardContainer{
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.itemPrice{
+    font-weight: bold;
+}
+.deleteButton1{
+    background-color: rgb(255, 176, 149);
+}
+.deleteButton2{
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+.deleteButton2 button{
+    padding: 0.2rem;
+    background-color: rgb(255, 176, 149);
+}

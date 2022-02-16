@@ -1,15 +1,18 @@
 import './ItemDetail.css'
-import React, { useState } from "react"
+import React, { useState, useContext} from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
+import { ProductsContext } from '../../CartContext/CartContext'
+
 
 const ItemDetail = ( {data} ) => {
 
     const initial = 1;
-    const stock = 5;
+    const stock = 5; //cuando tenga mis propios productos, cada objeto tendra un stock y lo pasare aca como data.stock
 
     const [items, setItems] = useState(initial);
     const [cartAdd, setCartAdd] = useState(false);
+    const [addedProducts, setAddedProducts] = useContext(ProductsContext);
 
     const onAdd = () => {
         if(items < stock){
@@ -23,8 +26,23 @@ const ItemDetail = ( {data} ) => {
         }
     }
 
-    const onAddCart = () => {
+    const onAddCart = (ProductTitle, ProductPrice, ProductId, ProductImage) => {
         setCartAdd(true);
+        const findProduct = addedProducts.find(product => ProductTitle.toLowerCase() === product.title.toLowerCase())
+        if (findProduct) {
+            if (findProduct.quantity < stock){ 
+                findProduct.quantity += items;
+            }
+            if(findProduct.quantity > stock){
+                findProduct.quantity = stock;
+            }
+        }
+        else {
+            addedProducts.push({ id:ProductId, title:ProductTitle, price: ProductPrice, image:ProductImage, quantity: items  })
+        }
+
+
+        setAddedProducts([...addedProducts]);
     }
 
     return(
@@ -53,6 +71,7 @@ const ItemDetail = ( {data} ) => {
                 onAdd={onAdd}
                 onLess={onLess}
                 onAddCart={onAddCart}
+                data={data}
             />
             }
         </>

@@ -10,7 +10,7 @@ const CategoryItemContainer = () => {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    let categoryId = useParams(); //me devuelve un objeto con el una propiedad categoryId que toma el valor de lo que se envia en el to del Link
+    let categoryId = useParams(); //me devuelve un objeto con una propiedad categoryId que toma como valor lo que se envia en el to del Link
 
     let category = categoryId.categoryId;
 
