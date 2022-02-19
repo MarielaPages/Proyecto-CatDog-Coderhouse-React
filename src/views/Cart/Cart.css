@@ -12,13 +12,19 @@
 .deleteButton1{
     background-color: rgb(255, 176, 149);
 }
-.deleteButton2{
+.deleteAllOrFinish{
     margin-bottom: 3rem;
     margin-top: 1rem;
 }
-.deleteButton2 button{
+.deleteAllOrFinish button{
     padding: 0.2rem;
     background-color: rgb(255, 176, 149);
+}
+.deleteButton2{
+    margin-right: 0.5rem;
+}
+.finishButton{
+    margin-left: 0.5rem;
 }
 .total{
     display: flex;

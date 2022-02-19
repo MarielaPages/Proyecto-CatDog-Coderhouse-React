@@ -12,7 +12,6 @@ const Cart = () => {
     }
     const clearAll = (e) => {
         setAddedProducts([])
-        e.target.setAttribute("style", "display:None;")
     }
 
     //Calculo el total de los productos primero pasando los subtotales a un array y luego sumandolos
@@ -64,8 +63,9 @@ const Cart = () => {
                 <div className='total'>
                     <p>Total: {total}</p>
                 </div>
-                <div className="d-flex justify-content-center deleteButton2">
-                    <button onClick={clearAll}>Delete all</button>
+                <div className="d-flex justify-content-center deleteAllOrFinish">
+                    <button onClick={clearAll} className="deleteButton2">Delete all</button>
+                    <button className="finishButton">Finish purchase</button>
                 </div>
             </>
         )
