@@ -54,6 +54,11 @@ nav{
 }
 
 @media only screen and (min-width:992px){
+    .logo{
+        position: absolute;
+        left:1rem;
+        top:1rem;
+    }
     .subrayado{
         background:linear-gradient(darksalmon,darksalmon);
         background-size: 0% 2px;
@@ -69,8 +74,11 @@ nav{
         display: flex;
         justify-content: center;
     }
+    #navbarNav{
+        margin-left: 0rem;
+        margin-top: 2rem;
+    }
     .navbar-nav li{
-        margin-right: 1rem;
         margin-right: 1rem;
     }
 }

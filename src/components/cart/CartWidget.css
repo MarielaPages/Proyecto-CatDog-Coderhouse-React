@@ -6,6 +6,13 @@
 .cart img{
     width:4rem;
 }
+.cartNumberProds{
+    position: absolute;
+    top: 2.2rem;
+    right: 4.4rem;
+    font-weight:bold;
+    font-size: 1.2rem;
+}
 
 @media only screen and (min-width:680px){
     .cart{
@@ -13,12 +20,22 @@
         top: 2.5rem;
         right:8.5rem;
     }
+    .cartNumberProds{
+        position: absolute;
+        top: 2.2rem;
+        right: 8rem;
+    }
 }
 
 @media only screen and (min-width:992px){
     .cart{
-        position: unset;
-        margin-right: 4rem;
-        margin-left: 7rem;
+        position: absolute;
+        top:2.5rem;
+        right:4.5rem;
     }   
+    .cartNumberProds{
+        position: absolute;
+        top: 2.2rem;
+        right: 4rem;
+    }
 }
