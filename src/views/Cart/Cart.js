@@ -39,7 +39,7 @@ const Cart = () => {
     else{
         return(
             <>
-                <div className="container">
+                <div className="container productsContainer">
                     <div className="row">
                         {(addedProducts.map(product => {
                             return(

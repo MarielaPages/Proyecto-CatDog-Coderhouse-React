@@ -2,6 +2,9 @@ import React, { useState, useEffect} from 'react'
 import "./ItemList.css"
 import Item from "../Item/Item"
 import { Link } from "react-router-dom"
+//Firebase - Firestore
+import { db } from '../../firebaseConfig/firebaseConfig'
+import { collection, query, getDocs } from  "firebase/firestore"
 
 const ItemList = () => {
 
@@ -10,11 +13,17 @@ const ItemList = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
-            .then((res) => res.json())
-            .then((prods) => setProducts(prods))
-            .catch((error) => console.log(error))
-            .finally(() => setIsLoading(false))
+        const getProducts = async () => {
+            const q = query(collection(db, "Products"));
+            const querySnapshot = await getDocs(q);
+            const prods = []
+            querySnapshot.forEach(prod => {
+                prods.push({...prod.data(), id: prod.id});
+            });
+            setProducts(prods);
+            setIsLoading(false);
+        }
+        getProducts();
     }, []);
 
     return(

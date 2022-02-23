@@ -2,10 +2,12 @@ import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import '../ItemDetailContainer/ItemDetailContainer.css'
 import { useParams } from 'react-router-dom'
+import { db } from '../../firebaseConfig/firebaseConfig'
+import { collection, query, where, getDocs, documentId } from  "firebase/firestore"
 
 const ItemDetailContainer = () => {
 
-    const [prodDetail, setProdDetail] = useState({})
+    const [prodDetail, setProdDetail] = useState([])
 
     const [isLoading,setIsLoading] = useState(true);
 
@@ -13,12 +15,15 @@ const ItemDetailContainer = () => {
     
     let idProd = idObj.id;
 
-    let getItem = () => {
-        fetch(`https://fakestoreapi.com/products/${idProd}`)
-            .then((res) => res.json())
-            .then((prod) => setProdDetail(prod))
-            .catch((error) => console.log(error))
-            setTimeout(() => {setIsLoading(false)}, 2000);
+    let getItem = async () => {
+        const q = query(collection(db, "Products"), where(documentId(), "==", idProd));
+        const querySnapshot = await getDocs(q);
+        const getItem = []
+        querySnapshot.forEach(prod => {
+            getItem.push({...prod.data(), id: prod.id})
+        });
+        setProdDetail(getItem);
+        setIsLoading(false);
     }
 
     useEffect(() => {
@@ -31,7 +36,13 @@ const ItemDetailContainer = () => {
                 ?
             <p className="text-center">Is loading...</p>
                 :
-            <ItemDetail data={prodDetail}/>
+            prodDetail.map(prod =>{
+                return(
+                    <div key={prod.id}>
+                        <ItemDetail data={prod}/>
+                    </div>
+                )
+            })
             }
         </div>
     )

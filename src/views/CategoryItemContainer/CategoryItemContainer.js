@@ -3,6 +3,8 @@ import './CategoryItemContainer.css'
 import Item from '../../components/Item/Item'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { db } from '../../firebaseConfig/firebaseConfig'
+import { collection, query, where, getDocs} from  "firebase/firestore"
 
 
 const CategoryItemContainer = () => {
@@ -15,11 +17,18 @@ const CategoryItemContainer = () => {
     let category = categoryId.categoryId;
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/category/${category}`)
-            .then((res) => res.json())
-            .then((prods) => setProducts(prods))
-            .catch((error) => console.log(error))
-            .finally(() => setIsLoading(false))
+        const getProducts = async () => {
+            const q = query(collection(db, "Products"), where("categoria", "==", category));
+            const querySnapshot = await getDocs(q);
+            const prods = []
+            console.log(querySnapshot)
+            querySnapshot.forEach(prod => {
+                prods.push({...prod.data(), id: prod.id});
+            });
+            setProducts(prods);
+            setIsLoading(false);
+        }
+        getProducts();
     }, [category]);
 
     return(

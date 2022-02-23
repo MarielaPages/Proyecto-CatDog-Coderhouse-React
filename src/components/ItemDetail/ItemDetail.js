@@ -8,7 +8,7 @@ import { ProductsContext } from '../../CartContext/CartContext'
 const ItemDetail = ( {data} ) => {
 
     const initial = 1;
-    const stock = 5; //cuando tenga mis propios productos, cada objeto tendra un stock y lo pasare aca como data.stock
+    const stock = data.stock;
 
     const [items, setItems] = useState(initial);
     const [cartAdd, setCartAdd] = useState(false);
@@ -47,8 +47,8 @@ const ItemDetail = ( {data} ) => {
 
     return(
         <>
-        <div className="card mb-3 cardContainer" style={{maxWidth: '540px'}}>
-            <div className="row g-0">
+        <div className="card mb-3 cardCont" style={{maxWidth: '540px'}}>
+            <div className="row g-0 cardRow">
                 <div className="col-md-4 imgContainer">
                     <img src={data.image} className="img-fluid rounded-start" alt={data.title} />
                 </div>
@@ -56,7 +56,6 @@ const ItemDetail = ( {data} ) => {
                     <div className="card-body">
                         <p className="card-title productTitle">{(data.title).toUpperCase()}</p>
                         <p className="card-text productPrice">usd {data.price}</p>
-                        <p className="card-text">{data.description}</p>
                     </div>
                 </div>
             </div>

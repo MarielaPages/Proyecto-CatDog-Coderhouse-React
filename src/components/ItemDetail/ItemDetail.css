@@ -1,18 +1,15 @@
-.cardContainer{
-    display: flex;
-    justify-content:center;
-    padding: 1rem;
+.cardCont{
+    margin: 1.5rem;
 }
 .imgContainer{
-    padding-right: 1rem;
     display: flex;
     align-items: center;
 }
 .productTitle{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .productPrice{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 .productBody{
@@ -28,4 +25,11 @@
     font-size: 1.2rem;
     background-color: rgb(255, 176, 149);
     border-radius: 0.3rem;
+}
+
+@media only screen and (min-width:680px){
+    .cardCont{
+        margin:auto;
+        margin-top: 3rem;
+    }
 }

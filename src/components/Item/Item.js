@@ -6,7 +6,7 @@ const Item = ( {data} ) => {
             <div className="imageContainer">
                 <img src={data.image} className="card-img-top" alt={data.title} />
             </div>
-            <div className="card-body cardBodyContainer">
+            <div className="card-body cardBody">
                 <p className="card-text text-center">{(data.title).toUpperCase()}</p>
                 <p className="card-text text-center itemPrice">usd {data.price}</p> 
             </div>

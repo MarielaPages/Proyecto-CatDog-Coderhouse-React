@@ -21,10 +21,10 @@ const NavBar = () => {
                 <Link to="/about" className="nav-link subrayado" id="navList1">About</Link>
               </li>
               <li className="nav-item">
-                <Link to="category/jewelery" className="nav-link subrayado" id="navList2">For Cats</Link>
+                <Link to="category/cats" className="nav-link subrayado" id="navList2">For Cats</Link>
               </li>
               <li className="nav-item">
-                <Link to="category/electronics" className="nav-link subrayado" id="navList3">For Dogs</Link>
+                <Link to="category/dogs" className="nav-link subrayado" id="navList3">For Dogs</Link>
               </li>
               <li className="nav-item">
                 <Link to="./faqs" className="nav-link subrayado" id="navList4">FAQs</Link>

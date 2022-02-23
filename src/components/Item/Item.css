@@ -1,5 +1,5 @@
 .imageContainer{
-    height: 35rem;
+    height: 16rem;
     display: flex;
     align-items: center;
 }
@@ -7,8 +7,9 @@
     max-width: 25rem;
     width: 100%;
 }
-.cardBodyContainer{
-    height: 10rem;
+.cardBody{
+    height:7rem;
+    margin-top: 0.8rem;
 }
 .cardContainer{
     margin: auto;
