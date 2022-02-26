@@ -4,13 +4,13 @@ import '../Cart/Cart.css'
 import { Link } from "react-router-dom"
 
 const Cart = () => {
-    const [addedProducts, setAddedProducts] = useContext(ProductsContext);
+    let [addedProducts, setAddedProducts, total] = useContext(ProductsContext);
 
     const deleteProduct = (productName) => {
         const updatedProducts = addedProducts.filter(product => productName !== product.title);
         setAddedProducts(updatedProducts);
     }
-    const clearAll = (e) => {
+    const clearAll = () => {
         setAddedProducts([])
     }
 
@@ -22,7 +22,6 @@ const Cart = () => {
         totalPerProduct.push(totalPrice)
     })
     
-    let total = 0;
 
     for (let i=0; i < totalPerProduct.length; i++){
         total = total + totalPerProduct[i];
@@ -51,7 +50,7 @@ const Cart = () => {
                                         <div className="card-body cardBodyContainer">
                                             <p className="card-text text-center">{(product.title).toUpperCase()}</p>
                                             <p className="card-text text-center itemPrice">usd {product.price}</p> 
-                                            <p className="card-text text-center">{(product.quantity)}</p>
+                                            <p className="card-text text-center">Quantity: {(product.quantity)}</p>
                                         </div>
                                         <button className="deleteButton1" onClick={() => deleteProduct(product.title)}>Delete</button>
                                     </div>
@@ -65,7 +64,9 @@ const Cart = () => {
                 </div>
                 <div className="d-flex justify-content-center deleteAllOrFinish">
                     <button onClick={clearAll} className="deleteButton2">Delete all</button>
-                    <button className="finishButton">Finish purchase</button>
+                    <Link to="/form">
+                        <button className="finishButton">Finish purchase</button>
+                    </Link>
                 </div>
             </>
         )
@@ -73,4 +74,4 @@ const Cart = () => {
 
 }
 
-export default Cart
+export default Cart;

@@ -47,14 +47,14 @@ const ItemDetail = ( {data} ) => {
 
     return(
         <>
-        <div className="card mb-3 cardCont" style={{maxWidth: '540px'}}>
+        <div className="card mb-3 cardCont">
             <div className="row g-0 cardRow">
-                <div className="col-md-4 imgContainer">
+                <div className="col-md-6 imgContainer">
                     <img src={data.image} className="img-fluid rounded-start" alt={data.title} />
                 </div>
-                <div className="col-md-8 productBody">
+                <div className="col-md-6 productBody">
                     <div className="card-body">
-                        <p className="card-title productTitle">{(data.title).toUpperCase()}</p>
+                        <p className="card-title productTitle">{(data.title)}</p>
                         <p className="card-text productPrice">usd {data.price}</p>
                     </div>
                 </div>

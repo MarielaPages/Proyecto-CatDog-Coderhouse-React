@@ -8,6 +8,7 @@ import FAQs from './views/FAQs/FAQs'
 import ContactUs from './views/ContactUs/ContactUs'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './views/Cart/Cart'
+import FinishPurchase from './views/FinishPurchase/FinishPurchase'
 import { ProductsProvider } from './CartContext/CartContext'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs/>} />
           <Route path="/detail/:id" element={<ItemDetailContainer/>} />
           <Route path="/cart" element={<Cart/>} />
+          <Route path="/form" element={<FinishPurchase/>}/>
         </Routes>
       </ProductsProvider>
     </Router>

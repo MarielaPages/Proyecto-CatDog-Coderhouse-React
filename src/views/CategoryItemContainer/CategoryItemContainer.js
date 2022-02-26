@@ -21,7 +21,6 @@ const CategoryItemContainer = () => {
             const q = query(collection(db, "Products"), where("categoria", "==", category));
             const querySnapshot = await getDocs(q);
             const prods = []
-            console.log(querySnapshot)
             querySnapshot.forEach(prod => {
                 prods.push({...prod.data(), id: prod.id});
             });

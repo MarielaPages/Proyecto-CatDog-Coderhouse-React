@@ -6,11 +6,11 @@
     align-items: center;
 }
 .productTitle{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 .productPrice{
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.7rem;
 }
 .productBody{
     padding-left: 1rem;
@@ -23,13 +23,26 @@
 .cartButton{
     padding: 0.5rem;
     font-size: 1.2rem;
-    background-color: rgb(255, 176, 149);
+    background-color: rgb(253, 184, 161);
+    border: 1px solid darksalmon;
     border-radius: 0.3rem;
+}
+.card{
+    max-width: 600px
 }
 
 @media only screen and (min-width:680px){
     .cardCont{
         margin:auto;
         margin-top: 3rem;
+    }
+    .cartButton{
+        border: 2px solid darksalmon;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    .card{
+        max-width: 900px
     }
 }

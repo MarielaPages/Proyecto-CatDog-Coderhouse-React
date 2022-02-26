@@ -15,18 +15,17 @@ const ItemDetailContainer = () => {
     
     let idProd = idObj.id;
 
-    let getItem = async () => {
-        const q = query(collection(db, "Products"), where(documentId(), "==", idProd));
-        const querySnapshot = await getDocs(q);
-        const getItem = []
-        querySnapshot.forEach(prod => {
-            getItem.push({...prod.data(), id: prod.id})
-        });
-        setProdDetail(getItem);
-        setIsLoading(false);
-    }
-
     useEffect(() => {
+        const getItem = async () => {
+            const q = query(collection(db, "Products"), where(documentId(), "==", idProd));
+            const querySnapshot = await getDocs(q);
+            const getItem = [];
+            querySnapshot.forEach(prod => {
+                getItem.push({...prod.data(), id: prod.id})
+            });
+            setProdDetail(getItem);
+            setIsLoading(false);
+        }
         getItem();
     }, [idProd]);
 
