@@ -12,11 +12,9 @@ const initialState= {
 
 const FinishPurchase = () => {
 
-    let [addedProducts, total] = useContext(ProductsContext);
+    let { addedProducts, total } = useContext(ProductsContext);
 
     const [values, setValues] = useState(initialState);
-
-    console.log(total);
 
     const getValues = (e) => {
         const {value, name} = e.target;
@@ -34,7 +32,7 @@ const FinishPurchase = () => {
 
     return(
         <>
-            <form className="form">
+            <form className="form" onSubmit={submit}>
                 <div className="form-floating mb-3 inputContainer">
                     <input type="text" name="name" value={values.name} onChange={getValues} className="form-control" id="floatingName" placeholder="Name" />
                     <label htmlFor="floatingName">Name</label>
@@ -47,10 +45,13 @@ const FinishPurchase = () => {
                     <input type="text" name="address" value={values.address} onChange={getValues} className="form-control" id="floatingAddress" placeholder="Address" />
                     <label htmlFor="floatingAddress">Address</label>
                 </div>
-                <button className="formButton" onSubmit={submit} >Send</button>
+                <button className="formButton">Send</button>
             </form>
         </>
     )
 }
+
+//FALTA ARMAR EL CONDICIONAL PARA QUE APAREZCA QUE YA SE TOMO EL PEDIDO Y QUE NO PIERDAN SU ID DE COMPRA. TMB FALTA PONER LA FECHA EN DOCREF
+//tambien falta que cuando se de en el send, se desaparezcan los productos del carrito 
 
 export default FinishPurchase;

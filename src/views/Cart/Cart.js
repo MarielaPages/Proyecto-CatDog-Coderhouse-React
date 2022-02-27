@@ -4,7 +4,7 @@ import '../Cart/Cart.css'
 import { Link } from "react-router-dom"
 
 const Cart = () => {
-    let [addedProducts, setAddedProducts, total] = useContext(ProductsContext);
+    let { addedProducts, setAddedProducts, total, setTotal } = useContext(ProductsContext);
 
     const deleteProduct = (productName) => {
         const updatedProducts = addedProducts.filter(product => productName !== product.title);
@@ -21,11 +21,13 @@ const Cart = () => {
         let totalPrice = product.price * product.quantity;
         totalPerProduct.push(totalPrice)
     })
-    
+
+    let totalToPay = 0
 
     for (let i=0; i < totalPerProduct.length; i++){
-        total = total + totalPerProduct[i];
+        totalToPay = totalToPay + totalPerProduct[i];
     }
+    setTotal(totalToPay);
 
     if(total === 0){
         return(

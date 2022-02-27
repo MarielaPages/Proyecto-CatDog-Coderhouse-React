@@ -7,7 +7,7 @@ import { ProductsContext } from "../../CartContext/CartContext"
 const CartWidget = () => {
 
     //Calculo el total variable de items
-    const [addedProducts] = useContext(ProductsContext);
+    const { addedProducts } = useContext(ProductsContext);
 
     const itemsPerProduct = []
 

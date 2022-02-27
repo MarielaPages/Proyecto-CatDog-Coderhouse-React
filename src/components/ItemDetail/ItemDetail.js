@@ -12,7 +12,7 @@ const ItemDetail = ( {data} ) => {
 
     const [items, setItems] = useState(initial);
     const [cartAdd, setCartAdd] = useState(false);
-    const [addedProducts, setAddedProducts] = useContext(ProductsContext);
+    const { addedProducts, setAddedProducts } = useContext(ProductsContext);
 
     const onAdd = () => {
         if(items < stock){
