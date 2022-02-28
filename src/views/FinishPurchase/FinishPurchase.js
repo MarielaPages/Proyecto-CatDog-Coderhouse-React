@@ -1,8 +1,9 @@
 import '../FinishPurchase/FinishPurchase.css';
 import React, { useState, useContext } from 'react';
-import { collection, addDoc } from 'firebase/firestore'
-import {db} from '../../firebaseConfig/firebaseConfig'
+import { collection, addDoc, doc, updateDoc } from 'firebase/firestore'
+import { db } from '../../firebaseConfig/firebaseConfig'
 import { ProductsContext } from '../../CartContext/CartContext';
+import PurchaseMessage from '../../components/PurchaseMessage/PurchaseMessage';
 
 const initialState= {
     name: "",
@@ -12,10 +13,17 @@ const initialState= {
 
 const FinishPurchase = () => {
 
-    let { addedProducts, total } = useContext(ProductsContext);
+    let { addedProducts, setAddedProducts, total } = useContext(ProductsContext);
 
     const [values, setValues] = useState(initialState);
 
+    const [purchaseId, setPurchaseId] = useState('');
+
+    //capturo la fecha para pasarla despues al docRef y que me de esa info en firebase
+    const d = new Date();
+    let date = `${d.getDate()}/${1 + d.getMonth()}/${d.getFullYear()}`
+
+    //Tomo los valores de los campos del form
     const getValues = (e) => {
         const {value, name} = e.target;
         setValues({...values, [name]: value});
@@ -24,10 +32,18 @@ const FinishPurchase = () => {
     const submit = async (e) => {
         e.preventDefault();
         const docRef = await addDoc(collection(db, "purchases"), {
-            buyer: values, items: addedProducts, total:`${total}`
+            buyer: values, items: addedProducts, date: date, total:`${total}`
         });
-        console.log(docRef.id);
+        setPurchaseId(docRef.id);
         setValues(initialState);
+        addedProducts.forEach(product => {
+            let newstock = product.stock - product.quantity;
+            let productRef = doc(db, 'Products', product.id); 
+            updateDoc(productRef, {
+                stock: newstock
+            })
+        })
+        setAddedProducts([]);
     }
 
     return(
@@ -47,11 +63,9 @@ const FinishPurchase = () => {
                 </div>
                 <button className="formButton">Send</button>
             </form>
+            {purchaseId && <PurchaseMessage purchaseId={purchaseId} />}
         </>
     )
 }
-
-//FALTA ARMAR EL CONDICIONAL PARA QUE APAREZCA QUE YA SE TOMO EL PEDIDO Y QUE NO PIERDAN SU ID DE COMPRA. TMB FALTA PONER LA FECHA EN DOCREF
-//tambien falta que cuando se de en el send, se desaparezcan los productos del carrito 
 
 export default FinishPurchase;

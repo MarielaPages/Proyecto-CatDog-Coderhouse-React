@@ -7,7 +7,7 @@ import { collection, query, where, getDocs, documentId } from  "firebase/firesto
 
 const ItemDetailContainer = () => {
 
-    const [prodDetail, setProdDetail] = useState([])
+    const [prodDetail, setProdDetail] = useState([]);
 
     const [isLoading,setIsLoading] = useState(true);
 

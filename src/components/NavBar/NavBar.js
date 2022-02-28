@@ -1,6 +1,6 @@
 import logo from './NavBar-logo/logo.png';
-import CartWidget from "../cart/CartWidget"
-import { Link } from 'react-router-dom'
+import CartWidget from "../cart/CartWidget";
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -27,10 +27,7 @@ const NavBar = () => {
                 <Link to="category/dogs" className="nav-link subrayado" id="navList3">For Dogs</Link>
               </li>
               <li className="nav-item">
-                <Link to="./faqs" className="nav-link subrayado" id="navList4">FAQs</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/contactus" className="nav-link subrayado" id="navList5">Contact Us</Link>
+                <Link to="/faqs" className="nav-link subrayado" id="navList4">FAQs</Link>
               </li>
             </ul>
           </div>

@@ -26,7 +26,7 @@ const ItemDetail = ( {data} ) => {
         }
     }
 
-    const onAddCart = (ProductTitle, ProductPrice, ProductId, ProductImage) => {
+    const onAddCart = (ProductTitle, ProductPrice, ProductId, ProductImage, Stock) => {
         setCartAdd(true);
         const findProduct = addedProducts.find(product => ProductTitle.toLowerCase() === product.title.toLowerCase())
         if (findProduct) {
@@ -38,11 +38,11 @@ const ItemDetail = ( {data} ) => {
             }
         }
         else {
-            addedProducts.push({ id:ProductId, title:ProductTitle, price: ProductPrice, image:ProductImage, quantity: items  })
+            addedProducts.push({ id:ProductId, title:ProductTitle, price: ProductPrice, image:ProductImage, quantity: items, stock: Stock  })
         }
 
-
         setAddedProducts([...addedProducts]);
+
     }
 
     return(
@@ -77,4 +77,4 @@ const ItemDetail = ( {data} ) => {
     )
 }
 
-export default ItemDetail; 
+export default ItemDetail;

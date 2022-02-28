@@ -1,7 +1,7 @@
-import React, { useContext } from "react"
-import { ProductsContext } from '../../CartContext/CartContext'
-import '../Cart/Cart.css'
-import { Link } from "react-router-dom"
+import React, { useContext } from "react";
+import { ProductsContext } from '../../CartContext/CartContext';
+import '../Cart/Cart.css';
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     let { addedProducts, setAddedProducts, total, setTotal } = useContext(ProductsContext);
@@ -11,7 +11,7 @@ const Cart = () => {
         setAddedProducts(updatedProducts);
     }
     const clearAll = () => {
-        setAddedProducts([])
+        setAddedProducts([]);
     }
 
     //Calculo el total de los productos primero pasando los subtotales a un array y luego sumandolos
@@ -19,7 +19,7 @@ const Cart = () => {
     
     addedProducts.forEach(product => {
         let totalPrice = product.price * product.quantity;
-        totalPerProduct.push(totalPrice)
+        totalPerProduct.push(totalPrice);
     })
 
     let totalToPay = 0

@@ -5,11 +5,11 @@ import Home from './views/Home/Home'
 import About from './views/About/About'
 import CategoryItemContainer from './views/CategoryItemContainer/CategoryItemContainer'
 import FAQs from './views/FAQs/FAQs'
-import ContactUs from './views/ContactUs/ContactUs'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './views/Cart/Cart'
 import FinishPurchase from './views/FinishPurchase/FinishPurchase'
 import { ProductsProvider } from './CartContext/CartContext'
+import Footer from '../src/components/Footer/Footer'
 
 function App() {
   return (
@@ -20,12 +20,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/category/:categoryId" element={<CategoryItemContainer/>} />
-          <Route path="/faqs" element={<FAQs/>} />
-          <Route path="/contactus" element={<ContactUs/>} />
+          <Route path="/faqs" element={<FAQs />} />
           <Route path="/detail/:id" element={<ItemDetailContainer/>} />
-          <Route path="/cart" element={<Cart/>} />
-          <Route path="/form" element={<FinishPurchase/>}/>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/form" element={<FinishPurchase />}/>
         </Routes>
+        <Footer />
       </ProductsProvider>
     </Router>
   );

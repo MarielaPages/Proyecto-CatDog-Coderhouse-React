@@ -52,4 +52,4 @@ const CategoryItemContainer = () => {
     )
 }
 
-export default CategoryItemContainer
+export default CategoryItemContainer;

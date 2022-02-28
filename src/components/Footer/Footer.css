@@ -1,0 +1,51 @@
+footer{
+    background-color: rgb(243, 234, 200);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+footer ul{
+    display: flex;
+    justify-content:center;
+    margin-bottom: 0;
+    padding:0;
+}
+footer li{
+    list-style-type: none;
+    margin: 5px;
+}
+footer a{
+    text-decoration: none;
+}
+footer p{
+    text-align: center;
+    font-weight: bold;
+}
+footer i{
+    font-size: 1.6rem;
+    color:black;
+    background-color: rgb(243, 234, 200);
+}
+.icofont-facebook{
+    color:rgb(243, 234, 200);
+    background-color: black;
+}
+
+@media only screen and (min-width:680px){
+    footer{
+        height: 150px;
+        padding-top: 0rem;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    footer img{
+        margin-right: 0.5rem;
+    }
+    .footerBody{
+        margin-left: 0.5rem;
+    }
+}
