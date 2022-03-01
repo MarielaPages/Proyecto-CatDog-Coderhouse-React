@@ -1,0 +1,47 @@
+h1{
+    color: darksalmon;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+h2{
+    color: darksalmon;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+.sectionAboutUs{
+    display: flex;
+    justify-content:center;
+}
+.articleAboutUs{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+.articleAboutUs__content p{
+    font-weight: bold;
+}
+.articleAboutUs__img{
+    margin-top: 2rem;
+}
+.articleAboutUs__img img{
+    width: 16rem;
+}
+
+@media only screen and (min-width:680px){
+    .articleAboutUs__img img{
+        width: 25rem;
+        margin-left: 0rem;
+    }
+}
+
+@media only screen and (min-width:992px){
+    .articleHome__img{
+        width: 30rem;
+    }
+}

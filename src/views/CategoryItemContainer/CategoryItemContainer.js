@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { db } from '../../firebaseConfig/firebaseConfig'
 import { collection, query, where, getDocs} from  "firebase/firestore"
-
+import Spinner from '../../components/Spinner/Spinner'
 
 const CategoryItemContainer = () => {
     const [products, setProducts] = useState([]);
@@ -35,7 +35,7 @@ const CategoryItemContainer = () => {
             <div className="row">
                 {isLoading 
                     ?
-                <p className="text-center">Is loading...</p>
+                <Spinner />
                     :    
                 (products.map((product) => {
                     return(

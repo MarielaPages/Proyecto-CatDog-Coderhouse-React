@@ -1,4 +1,4 @@
-import "./ItermCount.css"
+import "./ItermCount.css";
 
 const ItemCount = ({ stock, items, onAdd, onLess, onAddCart, data }) => {
     return(

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 //Firebase - Firestore
 import { db } from '../../firebaseConfig/firebaseConfig'
 import { collection, query, getDocs } from  "firebase/firestore"
+import Spinner from '../Spinner/Spinner'
 
 const ItemList = () => {
 
@@ -31,7 +32,7 @@ const ItemList = () => {
             <div className="row">
                 {isLoading 
                     ?
-                <p className="text-center">Is loading...</p>
+                <Spinner />
                     :    
                 (products.map((product) => {
                     return(

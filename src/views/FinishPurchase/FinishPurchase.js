@@ -32,7 +32,7 @@ const FinishPurchase = () => {
     const submit = async (e) => {
         e.preventDefault();
         const docRef = await addDoc(collection(db, "purchases"), {
-            buyer: values, items: addedProducts, date: date, total:`${total}`
+            buyer: values, items: addedProducts, date: date, total: total
         });
         setPurchaseId(docRef.id);
         setValues(initialState);
