@@ -1,34 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ProductsContext } from '../../CartContext/CartContext';
 import '../Cart/Cart.css';
 import { Link } from "react-router-dom";
 
 const Cart = () => {
     
-    let { addedProducts, setAddedProducts, total, setTotal } = useContext(ProductsContext);
+    const { addedProducts, total, deleteProduct, clearAll, countTotal} = useContext(ProductsContext);
 
-    const deleteProduct = (productName) => {
-        const updatedProducts = addedProducts.filter(product => productName !== product.title);
-        setAddedProducts(updatedProducts);
-    }
-    const clearAll = () => {
-        setAddedProducts([]);
-    }
-
-    //Calculo el total de los productos primero pasando los subtotales a un array y luego sumandolos
-    const totalPerProduct = [];
-    
-    addedProducts.forEach(product => {
-        let totalPrice = product.price * product.quantity;
-        totalPerProduct.push(totalPrice);
-    })
-
-    let totalToPay = 0
-
-    for (let i=0; i < totalPerProduct.length; i++){
-        totalToPay = totalToPay + totalPerProduct[i];
-    }
-    setTotal(totalToPay);
+    useEffect(() => {countTotal();}, [addedProducts])
 
     if(total === 0){
         return(
