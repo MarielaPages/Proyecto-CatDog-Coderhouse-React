@@ -47,6 +47,7 @@ A nivel raiz de la app, en el componente App, se encuentran el Provider de conte
 En App tambien se enuentran el NavBar y el footes, donde el primero contiene las diferentes rutas de navegación. 
 El main de la página se encuentra en el Home Page. A partir de esta página, se despliega el patrón de Container, List and Detail, cuya lógica es la siguiente:
 - El ItemListContainer contiene una presentación y al componente ItemList, dentro del cual se realiza el pedido a Firestore a tarves de un query que nos permite traer todos los productos de la colección correspondiente. Cada uno de los productos traídos es dibujado en el anterior componente, llamando al componente Item, que contiene la estructura para cada tarjeta producto. Es en estas tarjetas que, al hacer click, se llama a la vista Detail a través de un componente Link. Una vez dentro del detalle, a través de eventos se seleccionan los productos deseados y a partir de otro Link se puede ir al carrito. 
+
 Como dijimos, en el navBar se encuentran las categorías de productos. Al ingresar en ellas, haciendo click, podemos ver la siguiente lógica:
 - En el CategoryItemContainer se hace el pedido a Firestore y se dibujan las tarjetas llamando al componente Item. El resto del flujo es igual al mencionado en el item anterior.
 
