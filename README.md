@@ -40,10 +40,19 @@ Las imágenes se encuentran almacenadas en Storage de [Firebase](https://console
 Los nombres de los componentes React por convención están escritos en Pascal Case. Las variables y funciones implementadas estan escritas en Camel Case. 
 
 ## Flujo de compra
-
-
 El usuario ingresa a la web y se despliega en el Home un listado de los productos, de los cuales puede elegir y hacer click en cualquiera. A través del menú, puede seleccionar la categoría de interés, y navegar por un listado de productos filtrado para seleccionar el/los que desea. Cuando selecciona alguno de estos productos, se abre una vista de detalle con el producto y botones para elegir más o menos dentro del stock. Una vez que elige la cantidad y pone "add to cart"se agrega el producto al carrito. Se muestra en el toolbar el icono del carrito con la cantidad de items totales (siendo items totales la suma de las unidades de cada producto añadido). Una vez decidida la compra, en la sección Cart el usuario puede revisar y eliminar productos, confirmar la compra o seguir comprando. En caso de confirmar la compra, se monta el componente de checkout con los diferentes pasos a seguir para generar la orden de compra: un formulario que capta los datos personales del buyer (usuario) que persiste en firebase/firestore, junto con los datos de los items comprados, la fecha y el total. Al confirmar, se genera la orden de compra persistente en una colección de firestore, y el usuario observa un mensaje con el número de ID de su compra y el total.
 
+## Estructura y componentenes
+A nivel raiz de la app, en el componente App, se encuentran el Provider de context API (Products Provider) y el BrowserRouter. De esta forma, todos los componentes que estén incluídos en App van a poder consumir el contexto, tanto de los productos del carrito como de sus totales, y se puede hacer uso de las rutas de "React-Router-DOM" desde cada componente. Dentro de las rutas de navegación, se implementó la ruta 404, page not found. 
+En App tambien se enuentran el NavBar y el footes, donde el primero contiene las diferentes rutas de navegación. 
+El main de la página se encuentra en el Home Page. A partir de esta página, se despliega el patrón de Container, List and Detail, cuya lógica es la siguiente:
+- El ItemListContainer contiene una presentación y al componente ItemList, dentro del cual se realiza el pedido a Firestore a tarves de un query que nos permite traer todos los productos de la colección correspondiente. Cada uno de los productos traídos es dibujado en el anterior componente, llamando al componente Item, que contiene la estructura para cada tarjeta producto. Es en estas tarjetas que, al hacer click, se llama a la vista Detail a través de un componente Link. Una vez dentro del detalle, a través de eventos se seleccionan los productos deseados y a partir de otro Link se puede ir al carrito. 
+Como dijimos, en el navBar se encuentran las categorías de productos. Al ingresar en ellas, haciendo click, podemos ver la siguiente lógica:
+- En el CategoryItemContainer se hace el pedido a Firestore y se dibujan las tarjetas llamando al componente Item. El resto del flujo es igual al mencionado en el item anterior.
+En el componente Cart (el carrito) se encuentra la siguiente lógica:
+- Se utiliza un condicional donde, de no haber productos, se muestra un cartel y a través de un Link devolvemos al usuario al Home, mientras que de haber productos, se pintan los mismos con sus cantidades, mostrando varios botones. Estos botones contienen eventos que permiten borrar un elemento o borrar todos los elementos. Por ultimo, hay un tercer botón que, con un Link, lleva al formulario de fin de compra. 
+El formulario de compra tiene la siguiente lógica:
+- Se trata de un formulario con 3 inputs (Nombre, Apellido y Calle). Por otro lado hay un boton que dispara el evento submit. El event handler del mismo nos permite guardar los datos mencionados, junto con la fecha de compra, los productos y el total. A su vez, este arroja un mensaje con el ID de compra. 
 
 ## Available Scripts
 
