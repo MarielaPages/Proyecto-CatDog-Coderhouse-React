@@ -49,8 +49,10 @@ El main de la página se encuentra en el Home Page. A partir de esta página, se
 - El ItemListContainer contiene una presentación y al componente ItemList, dentro del cual se realiza el pedido a Firestore a tarves de un query que nos permite traer todos los productos de la colección correspondiente. Cada uno de los productos traídos es dibujado en el anterior componente, llamando al componente Item, que contiene la estructura para cada tarjeta producto. Es en estas tarjetas que, al hacer click, se llama a la vista Detail a través de un componente Link. Una vez dentro del detalle, a través de eventos se seleccionan los productos deseados y a partir de otro Link se puede ir al carrito. 
 Como dijimos, en el navBar se encuentran las categorías de productos. Al ingresar en ellas, haciendo click, podemos ver la siguiente lógica:
 - En el CategoryItemContainer se hace el pedido a Firestore y se dibujan las tarjetas llamando al componente Item. El resto del flujo es igual al mencionado en el item anterior.
+
 En el componente Cart (el carrito) se encuentra la siguiente lógica:
 - Se utiliza un condicional donde, de no haber productos, se muestra un cartel y a través de un Link devolvemos al usuario al Home, mientras que de haber productos, se pintan los mismos con sus cantidades, mostrando varios botones. Estos botones contienen eventos que permiten borrar un elemento o borrar todos los elementos. Por ultimo, hay un tercer botón que, con un Link, lleva al formulario de fin de compra. 
+
 El formulario de compra tiene la siguiente lógica:
 - Se trata de un formulario con 3 inputs (Nombre, Apellido y Calle). Por otro lado hay un boton que dispara el evento submit. El event handler del mismo nos permite guardar los datos mencionados, junto con la fecha de compra, los productos y el total. A su vez, este arroja un mensaje con el ID de compra. 
 
