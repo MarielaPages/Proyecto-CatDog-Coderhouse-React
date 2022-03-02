@@ -1,16 +1,49 @@
-This is a cat and dog e-commerce. Here you will find:
- - A general section where you can see some of our products
- - A cat section with products for cats (For Cats)
- - A dog section with products for dogs (For Dogs)
- - A section where you can read more about us (About Us)
- - A seection with general questions (FAQs)
- - A contact us section with a map and a message section. 
+# Proyecto React: e-commerce
+Soy Mariela Pagés. Este es mi proyecto final para el curso de ReactJS en [CoderHouse](https://plataforma.coderhouse.com/), cursado en Enero 2022.
+La base del proyecto es un e-commerce hecho con React, implementado con herramientas tales como React Router DOM, React Hooks, Bootstrap para la definición de estilos homogéneos y Firebase como base de datos.
 
-I decided to make a minimalist application so that people could buy in an easy and pleasant way
+El proyecto busca mostrar un negocio de muebles y ropas para perros y gatos. En el mismo pueden encontrar:
+- Una seccion principal de productos generales por las que se puede navegar y seleccionar la de interés.
+- Una sección de productos solo para gatos con la misma interacción mencionada antes.
+- Una seccioón de productos solo para perros con la misma interacción mencionada.
+- Una sección que cuenta sobre el propocito de la marca y su misión.
+- Una sección de preguntas frecuentes. 
 
-# Getting Started with Create React App
+Decidí hacer esta página con un aspecto minimalista de forma que navegar por ella y comprar sea sencillo y agradable. Por otro lado, la hice en inglés pensando en un percado más allá del país. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Inicializando el proyecto
+Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
+
+## Instalación 
+Para instalar las dependencias requeridas, ejecutar `npm install`
+
+## Uso
+Para iniciar el servidor, ejecutar `npm start`. Para acceder a la App luego de inicializado el servidor, abrir http://localhost:3000 en el navegador.
+
+# Librerias y dependencias utilizadas
+
+## Bootstrap
+Se utilizó Bootstrap como base para darle estilo de la página con el fin de mejorar en look & feel de la App web. Por otro lado, hacer uso del mismo me permitía concentrarme en la implementación de React, finalidad principal del curso, permitiendo una interfaz homogénea, simple y coherente.
+
+## FontAwesome
+Se utilizó FontAwesome con el fin de obtener los iconos necesarios para la App web.
+
+## React-Router-DOM
+Para brindarle enrutamiento a la página, utilicé la colección de componentes que nos brinda React Router Dom para las aplicaciones web. De esta forma, se otorgó navegabilidad a la app.
+
+## Storage de imágenes/assets
+Las imágenes se encuentran almacenadas en Storage de [Firebase](https://console.firebase.google.com/)
+
+# Documentación 
+
+## Convenciones
+Los nombres de los componentes React por convención están escritos en Pascal Case. Las variables y funciones implementadas estan escritas en Camel Case. 
+
+## Flujo de compra
+
+
+El usuario ingresa a la web y se despliega en el Home un listado de los productos, de los cuales puede elegir y hacer click en cualquiera. A través del menú, puede seleccionar la categoría de interés, y navegar por un listado de productos filtrado para seleccionar el/los que desea. Cuando selecciona alguno de estos productos, se abre una vista de detalle con el producto y botones para elegir más o menos dentro del stock. Una vez que elige la cantidad y pone "add to cart"se agrega el producto al carrito. Se muestra en el toolbar el icono del carrito con la cantidad de items totales (siendo items totales la suma de las unidades de cada producto añadido). Una vez decidida la compra, en la sección Cart el usuario puede revisar y eliminar productos, confirmar la compra o seguir comprando. En caso de confirmar la compra, se monta el componente de checkout con los diferentes pasos a seguir para generar la orden de compra: un formulario que capta los datos personales del buyer (usuario) que persiste en firebase/firestore, junto con los datos de los items comprados, la fecha y el total. Al confirmar, se genera la orden de compra persistente en una colección de firestore, y el usuario observa un mensaje con el número de ID de su compra y el total.
+
 
 ## Available Scripts
 
